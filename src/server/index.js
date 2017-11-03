@@ -2,9 +2,10 @@
  * Module dependencies.
  */
 import http from 'http';
+import express from 'express';
 
-import app from '../app';
-import log from '../log';
+import app from './app';
+import log from './log';
 
 /**
  * Normalize a port into a number, string, or false.
@@ -87,3 +88,11 @@ function onListening() {
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+export default function (parameters) {
+  app.use(parameters.configuration.output.publicPath, express.static(parameters.configuration.output.path));
+  log.debug('server');
+  app.get('/react', (req, res) => {
+    res.render('react', { title: 'Express' });
+  });
+}
