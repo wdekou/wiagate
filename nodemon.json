@@ -1,0 +1,9 @@
+{
+  "verbose": true,
+  "ignore": ["*.test.js"],
+  "execMap": {
+    "js": "javascript",
+    "pde": "processing --sketch={{pwd}} --run"
+  },
+  "delay": "2500"
+}
