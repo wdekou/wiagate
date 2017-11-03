@@ -3,3 +3,7 @@ node_modules
 dist
 
 .vscode
+
+# These two files tend to cause problems when you include them to deploy on heroku
+yarn.lock
+package-lock.json
