@@ -3,15 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm run build && node dist/bin/server.js",
+    "start": "npm run build && node dist/server.bundle.js",
     "serve": "nodemon ./src/bin/server.start.js --exec babel-node",
-    "build": "./node_modules/.bin/babel src -d dist"
+    "build": "webpack --config webpack.config.babel.js --colors --display-error-details"
   },
   "dependencies": {
-    "babel-cli": "^6.26.0",    
-    "babel-preset-env": "^1.6.1",    
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
+    "eslint": "^4.10.0",
     "express": "~4.15.5",
     "jade": "~1.11.0",
     "minilog": "^3.1.0",
@@ -19,9 +18,18 @@
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",    
+    "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",    
     "babel-register": "^6.26.0",
-    "nodemon": "^1.12.1"
+    "copy-webpack-plugin": "^4.2.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.12.1",
+    "webpack": "^3.8.1",
+    "webpack-node-externals": "^1.6.0"
   },
   "engines": {
     "node": ">=8.0.0"
