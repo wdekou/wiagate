@@ -1,5 +1,5 @@
-# Express Babel Starter Kit
-
+# Express Webpack Starter Kit
+This starter kit is base on [Express Webpack Starter Kit](https://github.com/williamdekou/express-babel-starter-kit) and use webpack as bundle engine
 ## Goals
 - Develop express applications with the latest javascript features
 - Hot reload during development
