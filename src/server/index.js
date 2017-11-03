@@ -92,7 +92,7 @@ server.on('listening', onListening);
 export default function (parameters) {
   app.use(parameters.configuration.output.publicPath, express.static(parameters.configuration.output.path));
   log.debug('server');
-  app.get('/react', (req, res) => {
+  app.get('/', (req, res) => {
     res.render('react', { title: 'Express' });
   });
 }
