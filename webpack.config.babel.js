@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import path from 'path';
 import nodeExternals from 'webpack-node-externals';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import 'dotenv';
 
 const config = {
   context: path.resolve(__dirname),
@@ -43,6 +44,14 @@ const config = {
     extensions: ['.js', '.json'],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      process: {
+        env: {
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+        }
+      }
+    }),
+
     new CopyWebpackPlugin([
       { from: 'src/views', to: 'views' },
       { from: 'src/public', to: 'public' },
