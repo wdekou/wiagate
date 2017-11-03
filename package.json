@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run build && node dist/bin/server.js",
     "serve": "nodemon ./src/bin/server.start.js --exec babel-node",
-    "build": "babel src -d dist"
+    "build": "./node_modules/.bin/babel src -d dist"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
