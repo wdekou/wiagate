@@ -1,9 +1,16 @@
 {
   "presets": [
+    "react",
     ["env", {
       "targets": {
-        "node": "current"
+        "node": "current",
+        "browsers": ["last 2 versions", "safari >= 7"]
       }
     }]
-  ]
+  ],
+  "plugins": [
+    ["transform-runtime", "transform-react-display-name"],
+    ["add-module-exports"],
+    ["transform-decorators-legacy"]
+	]
 }
