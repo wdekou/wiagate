@@ -6,7 +6,11 @@ const config = {
   context: rootFolder,
   
     entry: {
-      main: './src/client'
+      main: './src/client',
+      vendor: [
+        `bootstrap-loader/lib/bootstrap.loader?configFilePath=${__dirname}/../.bootstraprc!bootstrap-loader/no-op.js`,
+        'font-awesome-loader'
+      ]
     },
   
     output: {

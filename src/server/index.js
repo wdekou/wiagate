@@ -93,6 +93,7 @@ export default function (parameters) {
   app.use(parameters.configuration.output.publicPath, express.static(parameters.configuration.output.path));
   log.debug('server');
   app.get('/', (req, res) => {
-    res.render('react', { title: 'Express' });
+    log.debug(parameters.chunks());
+    res.render('react', { title: 'Express', assets: parameters.chunks() });
   });
 }

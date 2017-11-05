@@ -14,8 +14,15 @@ const options = {
   noInfo: true,
   hot: true,
   publicPath: config.output.publicPath,
+  historyApiFallback: true,
   headers: { 'Access-Control-Allow-Origin': '*' },
-  stats: { colors: true }
+  stats: {
+    colors: true,
+    hash: false,
+    version: false,
+    chunks: false,
+    children: false,
+  },
 };
 
 app.use(webpackDevMiddleware(compiler, options));
