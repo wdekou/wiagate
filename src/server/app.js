@@ -7,9 +7,11 @@ import bodyParser from 'body-parser';
 
 import index from './routes/index';
 import users from './routes/users';
+import api from './api';
 
 const app = express();
 
+app.set('APP_SECRET', process.env.APP_SECRET);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -22,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/api', api(app));
 app.use('/ind', index);
 app.use('/users', users);
 /*

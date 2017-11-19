@@ -89,7 +89,19 @@ const config = {
     },
   
     plugins: [
-    
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify('development'),
+          BABEL_ENV: JSON.stringify('es6'),
+        },
+        
+        __TEST__: false,      
+        __PROD__: false,
+        __DEV__: true,
+        
+        __SSR__: false,
+        __DEVTOOLS__: true,
+      }),
     ],
 
     resolve: {

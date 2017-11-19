@@ -13,7 +13,7 @@ const baseConfig = getBaseConfig({
 
 const babelOptions = {
   plugins: [
-    // ['transform-decorators-legacy'],
+    ['transform-decorators-legacy'],
   ]
 };
 
@@ -24,7 +24,7 @@ const additionalConfig = {
   entry: {
     main: [
       `webpack-hot-middleware/client?path=${host}:${port}/__webpack_hmr`,
-      // 'react-hot-loader/patch',
+      'react-hot-loader/patch',
       baseConfig.entry.main
     ]
   },
@@ -50,7 +50,8 @@ const additionalConfig = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development')
-      }
+      },
+      __DEV__: true,
     })
   ]
 };

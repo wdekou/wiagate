@@ -21,10 +21,14 @@ const additionalConfig = {
     new webpack.DefinePlugin({
       __CLIENT__: false,
       __SERVER__: true,
-      process: {
-        env: {
-          NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-        }
+      'process.env': {
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+          DB_NAME: JSON.stringify(process.env.DB_NAME),
+          DB_USERNAME: JSON.stringify(process.env.DB_USERNAME),
+          DB_USER_PASSWORD: JSON.stringify(process.env.DB_USER_PASSWORD),
+          DB_HOST: JSON.stringify(process.env.DB_HOST),
+          DB_TYPE: JSON.stringify(process.env.DB_TYPE),
+          APP_SECRET: JSON.stringify(process.env.APP_SECRET),
       }
     }),
 

@@ -11,6 +11,8 @@
   "plugins": [
     ["transform-runtime", "transform-react-display-name"],
     ["add-module-exports"],
-    ["transform-decorators-legacy"]
+    "transform-class-properties",
+    ["transform-decorators-legacy"],
+    "react-hot-loader/babel"
 	]
 }

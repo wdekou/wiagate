@@ -10,7 +10,16 @@ const additionalConfig = {
   output: 
     {
       publicPath: `${host}:${port}${baseConfig.output.publicPath}`
-    }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development')
+      },
+      __DEV__: true,
+    })
+  ]
+  
 };
 
 export default merge(baseConfig, additionalConfig);

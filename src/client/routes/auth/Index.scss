@@ -1,0 +1,26 @@
+#auth {
+  .card {
+    
+  }
+  .card-header {
+    font-size: 18px;      
+    .active {
+      background-color: white;
+      .nav-link {
+        color: rgba(0, 0, 0, 0.95);    
+      }
+    };
+    .nav-link {
+      color: rgba(0, 0, 0, 0.5);  
+    }
+    .nav-item:not(.active) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+    .nav-item.signup {
+      border-right:  1px solid rgba(0, 0, 0, 0.125);
+    }
+    border-bottom: white;
+    padding: 0;
+
+  }
+}
