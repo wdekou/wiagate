@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { SubmissionError } from 'redux-form';
@@ -6,7 +6,7 @@ import { CardTitle, CardText, Form } from 'reactstrap';
 
 import SignUpForm from './SignUpForm' ;
 
-class SignUpView extends React.PureComponent {
+class SignUpView extends Component {
   onSubmit = signup => async values => {
     const result = await signup(values);
     

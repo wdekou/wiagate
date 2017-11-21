@@ -9,4 +9,4 @@ class AppLayout extends Component {
   }
 }
 
-export default connect()(AppLayout);
+export default AppLayout;

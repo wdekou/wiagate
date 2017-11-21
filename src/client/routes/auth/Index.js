@@ -24,7 +24,7 @@ const styles = {
 }
 
 class Auth extends Component {
-  tabClasses(route) {
+  tabClasses= (route) => {
     let { pathname } = this.props;
     if( pathname == route) return "col-md active";
     

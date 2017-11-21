@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { CardTitle, CardText, Form } from 'reactstrap';
@@ -6,7 +6,7 @@ import { Field, reduxForm, Button, Alert, SubmissionError } from 'redux-form';
 
 import LoginForm from './LoginForm';
 
-export default class LoginView extends PureComponent {
+export default class LoginView extends Component {
   static propTypes = {
     login: PropTypes.func.isRequired,
     //error: PropTypes.string

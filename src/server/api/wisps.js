@@ -6,6 +6,12 @@ import models from '../db/models';
 const router = (app) => {
   const router = express.Router();
 
+  router.get('', (req, res) => {
+    models.Wisp.findAll().then( response => {
+      res.json(response);
+    })
+  });
+
   router.post('/create', (req, res) => {
     models.Wisp.create(req.body).then((response) => {
       

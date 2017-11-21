@@ -9,11 +9,11 @@ import App from './app/Index'
 class Routes extends Component {
   render() {
     return (
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/auth" component={Auth}  />
-        <Route path="/app" component={App} />
-      </Switch>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/auth" component={Auth}  />
+          <Route path="/app" component={App} />
+        </Switch>
     )
   }
 }

@@ -4,10 +4,10 @@ import { CardTitle, CardText, Form } from 'reactstrap';
 import { Field, reduxForm, Button, Alert, SubmissionError } from 'redux-form';
 import { connect } from 'react-redux';
 
-import { createWisp as create } from './actions';
+import { postWisp as create } from './actions';
 import WispCreateView from './WispCreateView';
 
-class WispCreate extends React.Component {
+class WispCreate extends Component {
   static propTypes = {
     create: PropTypes.func.isRequired,
     data: PropTypes.object
