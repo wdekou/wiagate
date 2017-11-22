@@ -32,7 +32,9 @@ module.exports = {
     "jsx-a11y/anchor-is-valid": "off",
     "no-unused-vars": "off",
     "semi": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "no-cond-assign": 0,
+    "react/no-unused-prop-types": 0
   },
   "globals": {
     "window": true,

@@ -23,12 +23,7 @@ const LoginForm = ({ handleSubmit, submitting, onSubmit, error }) => {
         Forgot your password?
       </Link>
       <hr />
-      <div>
-        <span style={{ lineHeight: '58px' }}>Not registered yet?</span>
-        <NavLink className="btn btn-secondary" to="/auth/signup" activeClassName="active" style={{ margin: 10 }}>
-          Sign Up
-        </NavLink>
-      </div>
+      
     </Form>
   );
 }

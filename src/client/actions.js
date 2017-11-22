@@ -8,7 +8,7 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const REQUEST_SIGNUP = 'REQUEST_SIGNUP';
 export const SET_TOKEN = 'SET_TOKEN';
 
-export const login = ({email, password}) => (dispatch, getState) => {
+export const login = ({email, password, }, { gw_address, gw_port }) => (dispatch, getState) => {
   const { wisp } = getState();
   const api = new Api();
   dispatch(requestLogin());
@@ -17,15 +17,20 @@ export const login = ({email, password}) => (dispatch, getState) => {
     response.json().then((data) => {
       // Set token
       localStorage.setItem('token', data.token);      
+      console.log(data)  
+      
       dispatch(setToken(data.token));
-      dispatch(push('/app/wisps'))
+      setTimeout(() => {
+        window.location.replace(`http://${gw_address}:${gw_port}/wifidog/auth?token=${data.token}`)        
+      }, 1000)
+      //dispatch(push('/app/wisps'))
     })
   }), (error) => {
     console.log(error.message)
   }
 }
 
-export const signup = ({ firstName, lastName,  email, password}) => (dispatch, getState) => {  
+export const signup = ({ firstName, lastName,  email, password}, { gw_address, gw_port }) => (dispatch, getState) => {  
   const { wisp } = getState();
   const api = new Api();
   dispatch(requestSignUp());
@@ -40,9 +45,12 @@ export const signup = ({ firstName, lastName,  email, password}) => (dispatch, g
     */
     response.json().then((data) => {
       // Set token
-      localStorage.setItem('token', data.token);      
+      localStorage.setItem('token', data.token);    
       dispatch(setToken(data.token));
-      dispatch(push('/app/wisps/create'))
+      setTimeout(() => {
+        window.location.replace(`http://${gw_address}:${gw_port}/wifidog/auth?token=${data.token}`)        
+      }, 1000)
+      // dispatch(push('/app/wisps/create'))
     })
   }), (error) => {
     console.log(error.message)

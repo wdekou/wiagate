@@ -13,7 +13,6 @@ let api;
 
 export const postWisp = ({name, slug, welcomeMessage}) => (dispatch, getState) => {
   const { token } = getState();
-  
   api = new Api(token);
   dispatch({
     type: REQUEST_WISP_CREATION

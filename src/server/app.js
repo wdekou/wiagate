@@ -3,6 +3,7 @@ import path from 'path';
 // import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
+import cookiesMiddleware from 'universal-cookie-express';
 import bodyParser from 'body-parser';
 
 import index from './routes/index';
@@ -21,9 +22,18 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookiesMiddleware())
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/**
+ * WiFiDog Protocol routes definition
+ * 
+ */
+app.get('/wifidog/auth', (req, res, next) => {
+  res.send('Auth: 5');
+  res.end();
+});
 app.use('/api', api(app));
 app.use('/ind', index);
 app.use('/users', users);

@@ -90,9 +90,12 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 export default function (parameters) {
+  
   app.use(parameters.configuration.output.publicPath, express.static(parameters.configuration.output.path));
   log.debug('server');
   app.get('*', (req, res) => {
+    req.universalCookies.set('gw_address', req.query.gw_address)
+    req.universalCookies.set('gw_port', req.query.gw_port)
     res.render('react', { title: 'Express', assets: parameters.chunks() });
   });
 }

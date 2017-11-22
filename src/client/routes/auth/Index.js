@@ -32,29 +32,17 @@ class Auth extends Component {
   }
   render() {
     return (
-      <PageLayout>
+      <PageLayout  >
         <div id="auth">
           <div className="auth-main col-xs-12 col-md-6 mx-auto">
           <Card className="m-4 " >
-            <CardHeader style={styles.header} tag="h3">
-            <Nav style={styles.nav}>
-              <NavItem className={this.tabClasses("/auth/signup") + " signup"} >
-                <NavLink tag="span">
-                  <Link to="/auth/signup" className="nav-link text-center">Sign Up</Link>
-                </NavLink>
-              </NavItem>
-              <NavItem className={this.tabClasses("/auth/login")} >
-                <NavLink tag="span">
-                  <Link className="nav-link text-center" to="/auth/login" >Login</Link>
-                </NavLink>
-              </NavItem>
-            </Nav>
-            </CardHeader>
+            <CardHeader style={styles.header} tag="h3" />
+            
             <CardBody className="text-center pt-3">
             <Switch >
-              <Route exact path="/auth/login" component={Login} />
-              <Route exact path="/auth/signup" component={Signup} />
-              <Redirect from='/auth' to="/auth/login" />              
+              <Route exact path="/wifidog/login" component={Login} />
+              <Route exact path="/wifidog/signup" component={Signup} />
+              <Redirect from='/wifidog' to="/wifidog/login" />              
             </Switch>
             </CardBody>
           </Card>

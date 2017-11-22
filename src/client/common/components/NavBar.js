@@ -35,43 +35,7 @@ class NavBar extends Component {
     return (
       <Navbar fixed="top" style={style.navbar} light expand="md">
         <Container>
-        { !isLoggedIn ?
-          <NavbarBrand style={style.brand} tag="a" href='/'  >WISP Name</NavbarBrand>
-          :
-          <NavbarBrand style={style.brand} tag="a" href='/' >WiAGate</NavbarBrand>
-        }          
-          
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            { !isLoggedIn ?
-              <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink tag="span">
-                  <Link activeClassName="active" className="nav-link" to="/auth/login" > Login </Link>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag="span">
-                  <Link activeClassName="active" to="/auth/signup" className="nav-link">Sign Up</Link>
-                </NavLink>
-              </NavItem>
-            </Nav>
-            :
-            <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink tag="span">
-                <Link activeClassName="active" className="nav-link" to="/app/wisps" > My Wisps </Link>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag="span">
-                <Link activeClassName="active" to="/auth/logout" className="nav-link">Logout</Link>
-              </NavLink>
-            </NavItem>
-          </Nav>
-
-            }
-          </Collapse>
+        <NavbarBrand style={style.brand} tag="a" href='/' >WiAGate</NavbarBrand>
         </Container>
       </Navbar>
     );
